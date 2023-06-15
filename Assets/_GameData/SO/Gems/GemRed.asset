@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5561d738a5130b489a061ae0955eaf1, type: 3}
+  m_Name: GemRed
+  m_EditorClassIdentifier: 
+  type: 4
+  price: 80
+  iconSprite: {fileID: 21300000, guid: f1c4297ca13d89f44b77c17d6d97ff0d, type: 3}
+  prefab: {fileID: 5373071652738036990, guid: 3aace73e75a2fab4dbf0610e505c3d31, type: 3}
+  grownParticle: {fileID: 19824602, guid: 5be4d8771683b9a42b7f0c7e5ca2cbc8, type: 3}
