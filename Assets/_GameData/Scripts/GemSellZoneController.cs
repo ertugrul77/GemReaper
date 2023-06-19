@@ -3,14 +3,15 @@ using _GameData.Scripts.Managers;
 using _GameData.Scripts.UI;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _GameData.Scripts
 {
     public class GemSellZoneController : MonoBehaviour
     {        
-        [Tooltip("If you want to edit the size of the SellZone, simply adjust the size of the CubeVisual.")]
-        [Header("If you want to edit the size of the SellZone, simply adjust the size of the CubeVisual.")]
-        [SerializeField] private Transform cubeVisual;
+        [Tooltip("If you want to edit the size of the SellZone, simply adjust the size of the visual.")]
+        [Header("If you want to edit the size of the SellZone, simply adjust the size of the visual.")]
+        [SerializeField] private Transform visual;
 
         public Transform lastGemTransform;
         private Vector3 _cubeVisualScale;
@@ -26,8 +27,6 @@ namespace _GameData.Scripts
         private void Awake()
         {
             AddCollider();
-            SetLastGemPos();
-            SetSellZoneCapacity();
         }
 
         public void AddTheSoldGemToList(GemController gemController)
@@ -51,12 +50,22 @@ namespace _GameData.Scripts
 
             return new Vector3(_xPos, _yPos, _zPos);
         }
-        
+
+        private const float BoxColliderYSize = 0.6f;
+
         private void AddCollider()
         {
-            _cubeVisualScale = cubeVisual.transform.localScale;
+            var localScale = visual.transform.localScale;
+            var xScale =  localScale.x;
+            var zScale =  localScale.z / 2f;
+            
+            _cubeVisualScale = new Vector3(xScale, BoxColliderYSize, zScale);
             transform.AddComponent<BoxCollider>().size = _cubeVisualScale;
+            transform.GetComponent<BoxCollider>().center = new Vector3(0, 0, zScale);
             transform.GetComponent<BoxCollider>().isTrigger = true;
+            
+            SetLastGemPos();
+            SetSellZoneCapacity();
         }
 
         private void SetSellZoneCapacity()
@@ -64,10 +73,14 @@ namespace _GameData.Scripts
             _width = (int)_cubeVisualScale.x;
             _lenght = (int)_cubeVisualScale.z;
         }
+
+        private const float YScaleRatio = .83f;
+        private const float LastGemPosXOffset = .4f;
+
         private void SetLastGemPos()
         {
             lastGemTransform.transform.localPosition = new Vector3(-_cubeVisualScale.x / 2,
-                _cubeVisualScale.y / 2, _cubeVisualScale.z / 2) + new Vector3(0.5f, 0, -0.5f);
+                visual.transform.localScale.y * YScaleRatio, _cubeVisualScale.z / 2) + new Vector3(LastGemPosXOffset, 0, 0);
         }
     }
 }

@@ -45,10 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001d5d3b98cc65740aeb2d205a7c821e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stackController: {fileID: 0}
   allGemList: {fileID: 11400000, guid: 5441a485fb3e00542b0c3b54cccd854b, type: 2}
   gemSpawnerGround: {fileID: 2902092421520113630}
-  cellSize: 1.4
+  cellSize: 1.45
   width: 5
   height: 5
 --- !u!1001 &4705124241324752190

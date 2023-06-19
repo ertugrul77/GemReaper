@@ -6,8 +6,10 @@ namespace _GameData.Scripts
 {
     public class GemController : MonoBehaviour
     {
+        [HideInInspector] public GemSpawner gemSpawner;
         public GemIdentity gemIdentity;
-        public GemSpawner gemSpawner;
+        public PositionAlternator positionAlternator;
+        public GameObject gemShadow;
 
         private Collider _collider;
         private Tween _grownTween;

@@ -16,4 +16,4 @@ MonoBehaviour:
   price: 50
   iconSprite: {fileID: 21300000, guid: 93b055eef49e8d54ea15ae9010802e18, type: 3}
   prefab: {fileID: 5373071652738036990, guid: 72b8dfa06e910e04fb390cff86b570b9, type: 3}
-  grownParticle: {fileID: 19864782, guid: 27bec7bc47f580b41b60cd2d2cac5908, type: 3}
+  grownParticle: {fileID: 19849778, guid: 30899ef37631b8f45b80c994670bc531, type: 3}

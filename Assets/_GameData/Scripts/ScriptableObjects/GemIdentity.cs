@@ -1,3 +1,4 @@
+using _GameData.Scripts.ScriptableObjects.Audio;
 using UnityEngine;
 
 namespace _GameData.Scripts.ScriptableObjects

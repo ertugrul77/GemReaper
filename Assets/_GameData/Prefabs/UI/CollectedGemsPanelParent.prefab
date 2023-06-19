@@ -52,7 +52,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 8620404549041990320}
   gemView: {fileID: 2895737735751117866, guid: a326960178c6c83439496fb84985f477, type: 3}
-  soldGemsData: {fileID: 11400000, guid: 428a7522e3c14a14d8f756c87b41d55c, type: 2}
   allGemList: {fileID: 11400000, guid: 5441a485fb3e00542b0c3b54cccd854b, type: 2}
 --- !u!1 &4042030872638450224
 GameObject:
@@ -153,7 +152,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

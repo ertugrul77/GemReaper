@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _GameData.Scripts.Managers;
 using UnityEngine;
 
 namespace _GameData.Scripts.Controllers.Player
@@ -22,6 +23,9 @@ namespace _GameData.Scripts.Controllers.Player
                 gemController.StopTween();
                 StackGem(gemController);
                 gemController.gemSpawner.SpawnNewGem(gemController.transform.position);
+                gemController.positionAlternator.SetMovingPosition(true);
+                gemController.gemShadow.SetActive(false);
+                AudioReactor.Play(AudioReactor.lib.gemPing);
             }
             else if (other.TryGetComponent(out GemSellZoneController gemSellZoneController))
             {
@@ -45,6 +49,7 @@ namespace _GameData.Scripts.Controllers.Player
             _isSelling = true;
             while (_isSelling && collectedGemList.Count > 0)
             {
+                AudioReactor.Play(AudioReactor.lib.getMoney);
                 var lastGem = collectedGemList.Last();
                 SetLastStackPosition(-lastGem.GetYBoundsSize());
                 lastGem.SetParent(gemSellZoneController.lastGemTransform);
